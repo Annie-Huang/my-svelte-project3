@@ -1,9 +1,11 @@
 https://www.youtube.com/watch?v=vhGiGqZ78Rs
 https://github.com/Annie-Huang/my-svelte-project3
-
+https://materializecss.com/
+https://materializecss.com/getting-started.html
 
 =========================================================
 C:\react>npx degit sveltejs/template my-svelte-project3
 C:\react\my-svelte-project3>npm i
 
+C:\react\my-svelte-project3>npm install materialize-css@next
 
