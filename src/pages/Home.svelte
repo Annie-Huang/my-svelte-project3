@@ -21,15 +21,18 @@
         console.log(post);
     }
     function deletePost(id) {
-        fetch(`${apiBaseUrl}/post/${id}`, {
-            method: 'DELETE'
-        }).then(res => {
-            return res.json();
-        }).then(() => {
-            posts = posts.filter(p => p.id !== id);
-        });
+        // I didn't know confirm a default DOM method.
+        if(confirm("Are you sure?")) {
+            fetch(`${apiBaseUrl}/post/${id}`, {
+                method: 'DELETE'
+            }).then(res => {
+                return res.json();
+            }).then(() => {
+                posts = posts.filter(p => p.id !== id);
+            });
 
-        console.log('Deleting post with id: ', id);
+            console.log('Deleting post with id: ', id);
+        }
     }
 </script>
 
