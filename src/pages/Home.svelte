@@ -8,6 +8,13 @@
         const res = await fetch(apiBaseUrl + '/posts');
         posts = await res.json();
     })
+
+    function editPost(post) {
+        console.log(post);
+    }
+    function deletePost(id) {
+        console.log('Deleting post with id: ', id);
+    }
 </script>
 
 <style>
@@ -36,8 +43,8 @@
                         <p>{post.body}</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">Edit</a>
-                        <a href="#" class="delete-btn">Delete</a>
+                        <a href="#" on:click={() => editPost(post)}>Edit</a>
+                        <a href="#" class="delete-btn" on:click={() => deletePost(post.id)}>Delete</a>
                     </div>
                 </div>
             </div>
