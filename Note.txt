@@ -1,7 +1,10 @@
 https://www.youtube.com/watch?v=vhGiGqZ78Rs
+https://github.com/hidjou/classsed-svelte-tutorial
 https://github.com/Annie-Huang/my-svelte-project3
 https://materializecss.com/
 https://materializecss.com/getting-started.html
+https://github.com/EmilTholin/svelte-routing
+https://materializecss.com/navbar.html
 
 =========================================================
 C:\react>npx degit sveltejs/template my-svelte-project3
