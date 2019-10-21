@@ -39,7 +39,7 @@
         });
         const post = await res.json();
         dispatch('postCreated', post);
-        title = body = '';
+        // title = body = '';
 
         loading = false;
     }

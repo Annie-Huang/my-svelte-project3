@@ -26,6 +26,12 @@
             postsUpdated.splice(index, 1, post);
             posts = postsUpdated;
         } else posts = [post, ...posts];
+
+        editingPost = {
+            body: '',
+            title: '',
+            id: null
+        };
     }
 
     function editPost(post) {
