@@ -19,7 +19,13 @@
     // Generally get string from event.detail.text
     // event.detail holds the payload.
     function addPost({detail: post}) {
-        posts = [post, ...posts];
+        if (posts.find(p => p.id === post.id)) {
+            const index = posts.findIndex(p => p.id === post.id);
+            let postsUpdated = posts;
+            // splice() changes the original array whereas slice() doesn't but both of them returns array object.
+            postsUpdated.splice(index, 1, post);
+            posts = postsUpdated;
+        } else posts = [post, ...posts];
     }
 
     function editPost(post) {
