@@ -5,6 +5,11 @@
 
     const apiBaseUrl = "https://ndb99xkpdk.execute-api.eu-west-2.amazonaws.com/dev";
     let posts = [];
+    let editingPost = {
+        body: '',
+        title: '',
+        id: null
+    };
 
     onMount(async () => {
         const res = await fetch(apiBaseUrl + '/posts');
@@ -19,6 +24,7 @@
 
     function editPost(post) {
         console.log(post);
+        editingPost = post;
     }
     function deletePost(id) {
         // I didn't know confirm a default DOM method.
@@ -51,7 +57,7 @@
 
 <div class="row">
     <div class="col s6">
-        <PostForm on:postCreated={addPost} />
+        <PostForm on:postCreated={addPost} {editingPost}/>
     </div>
 </div>
 <div class="row">
