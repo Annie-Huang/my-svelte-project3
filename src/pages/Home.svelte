@@ -3,6 +3,8 @@
 
     import PostForm from '../components/PostForm.svelte';
 
+    let postLimit = 6;
+    
     const apiBaseUrl = "https://ndb99xkpdk.execute-api.eu-west-2.amazonaws.com/dev";
     let posts = [];
     let editingPost = {
@@ -52,6 +54,16 @@
             console.log('Deleting post with id: ', id);
         }
     }
+    
+    function setLimit() {
+        fetch(`${apiBaseUrl}/posts/${postLimit}`)
+                .then(res => {
+                    return res.json();
+                })
+                .then(postsData => {
+                    posts = postsData;
+                })
+    }
 </script>
 
 <style>
@@ -70,6 +82,13 @@
 <div class="row">
     <div class="col s6">
         <PostForm on:postCreated={addPost} {editingPost}/>
+    </div>
+    <div class="col s3" style="margin: 50px">
+        <p>Limit number of posts</p>
+        <input type="number" bind:value={postLimit} />
+        <button on:click={setLimit} class="waves-effect waves-light btn">
+            Set
+        </button>
     </div>
 </div>
 <div class="row">
