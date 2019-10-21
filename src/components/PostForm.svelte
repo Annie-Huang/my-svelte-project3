@@ -28,7 +28,7 @@
         const post = await res.json();
         dispatch('postCreated', post);
         title = body = '';
-        
+
         loading = false;
     }
 </script>
