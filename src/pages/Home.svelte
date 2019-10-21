@@ -11,6 +11,12 @@
         posts = await res.json();
     });
 
+    // Generally get string from event.detail.text
+    // event.detail holds the payload.
+    function addPost({detail: post}) {
+        posts = [post, ...posts];
+    }
+
     function editPost(post) {
         console.log(post);
     }
@@ -34,7 +40,7 @@
 
 <div class="row">
     <div class="col s6">
-        <PostForm />
+        <PostForm on:postCreated={addPost} />
     </div>
 </div>
 <div class="row">

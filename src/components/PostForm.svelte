@@ -1,10 +1,15 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
+
     let title = '';
     let body = '';
     let loading = false;
 
     const apiBaseUrl = "https://ndb99xkpdk.execute-api.eu-west-2.amazonaws.com/dev";
 
+    // https://svelte.dev/examples#event-forwarding
     async function onSubmit(event) {
         event.preventDefault();
 
@@ -21,6 +26,8 @@
             body: JSON.stringify(newPost)
         });
         const post = await res.json();
+        dispatch('postCreated', post);
+
         loading = false;
     }
 </script>
