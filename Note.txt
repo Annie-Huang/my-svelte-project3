@@ -9,3 +9,4 @@ C:\react\my-svelte-project3>npm i
 
 C:\react\my-svelte-project3>npm install materialize-css@next
 C:\react\my-svelte-project3>npm install rollup-plugin-css-only -D
+C:\react\my-svelte-project3>npm install svelte-routing
